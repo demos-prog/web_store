@@ -1,0 +1,26 @@
+.product_item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  max-width: 200px;
+  height: 300px;
+  overflow: scroll;
+}
+
+.add_btn {
+  padding: 10px;
+  transition: linear 0.2s;
+}
+
+.selected {
+  display: flex;
+  justify-content: center;
+  cursor: initial;
+  padding: 10px;
+  background-color: rgb(219, 219, 219);
+}
+
+.add_btn:hover {
+  background-color: #000;
+  color: white;
+}

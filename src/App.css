@@ -1,0 +1,148 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  box-shadow: 4px 4px 17px 0px rgba(34, 60, 80, 0.2);
+}
+
+main {
+  margin-top: 60px;
+}
+
+#main_cont {
+  padding: 10px 30px;
+  display: flex;
+}
+
+#categories_cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#content_wrap {
+  width: 100%;
+  height: min-content;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 15px;
+}
+
+#loader {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+}
+
+#header_cont {
+  padding: 15px 30px 10px;
+}
+
+#cart_logo {
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+  width: min-content;
+}
+
+#cart_logo img {
+  width: 30px;
+  height: 30px;
+}
+
+#cart_cont {
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 50%;
+  background-color: black;
+  transition: ease-out 0.6s;
+}
+
+.active {
+  left: 50%;
+}
+
+.unactive {
+  left: 100%;
+}
+
+#background{
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.288);
+  width: 100%;
+  height: 100%;
+}
+
+.unactiveBg{
+  display: none;
+}
+
+#cart_menu_logo{
+  position: relative;
+  width: min-content;
+  margin: 0 auto;
+}
+
+#cart_menu_logo img {
+  width: 30px;
+  height: 30px;
+  filter: invert(100%);
+}
+
+#cart_menu_logo_counter{
+  position: absolute;
+  top: -9px;
+  left: 3px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+#cart_wrap{
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#order_btns{
+  display: flex;justify-content: space-between;
+}
+
+#order_btns button{
+  padding: 10px;
+  transition: linear .2s;
+}
+
+#order_btns button:hover{
+  opacity: 0.9;
+}
+
+#order{
+  background-color: lightgreen;
+}
+
+#clear{
+  color: white;
+  background-color: crimson;
+}

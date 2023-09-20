@@ -1,0 +1,12 @@
+.categorie{
+  border: 1px solid #000;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: linear 0.2s;
+  white-space: nowrap;
+}
+
+.categorie:hover{
+  background-color: black;
+  color: white;
+}
