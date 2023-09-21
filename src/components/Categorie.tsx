@@ -4,9 +4,10 @@ import './Categorie.css'
 type Tcategorie = {
   setParamsUrl: (paramsUrl: string) => void,
   name: string,
+  paramsUrl: string,
 }
 
-const Categorie: React.FC<Tcategorie> = ({ setParamsUrl, name }) => {
+const Categorie: React.FC<Tcategorie> = ({ setParamsUrl, name, paramsUrl }) => {
 
   function handleClaick() {
     setParamsUrl(`/category/${name}`)
@@ -20,7 +21,10 @@ const Categorie: React.FC<Tcategorie> = ({ setParamsUrl, name }) => {
   }
 
   return (
-    <div className="categorie" onClick={handleClaick}>
+    <div className="categorie"
+      id={paramsUrl.slice(10) === name || (name === "All" && paramsUrl.length === 0) ? "is_selected" : ""}
+      onClick={handleClaick}
+    >
       <p>{makeNiceName(name)}</p>
     </div>
   )

@@ -132,10 +132,12 @@ function App() {
             <aside id="categories_cont">
               <Categorie
                 name={"All"}
+                paramsUrl={paramsUrl}
                 setParamsUrl={() => setParamsUrl('')}
               />
               {categories?.map((categorie: string, index: number) => {
                 return <Categorie
+                  paramsUrl={paramsUrl}
                   name={categorie}
                   setParamsUrl={setParamsUrl}
                   key={index}
@@ -148,14 +150,18 @@ function App() {
                   <img src={loader} alt="Loading..." />
                 </div>
                 :
-                data?.products?.map((product: Product_type, index: number) => {
-                  return <Product
-                    cart={cart}
-                    setCart={setCart}
-                    product={product}
-                    key={index}
-                  />
-                })}
+                data?.products?.length === 0 ?
+                  <p>Nothing was found.</p>
+                  :
+                  data?.products?.map((product: Product_type, index: number) => {
+                    return <Product
+                      cart={cart}
+                      setCart={setCart}
+                      product={product}
+                      key={index}
+                    />
+                  })
+              }
             </div>
           </section>
         </div>

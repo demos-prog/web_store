@@ -10,3 +10,10 @@
   background-color: black;
   color: white;
 }
+
+#is_selected{
+  border: 1px solid forestgreen;
+  cursor: default;
+  color: white;
+  background-color: forestgreen;
+}
