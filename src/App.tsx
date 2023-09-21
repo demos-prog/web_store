@@ -33,7 +33,7 @@ function App() {
     if (categories.length === 0) {
       setCategories(newData);
       setTimeout(() => {
-        setParamsUrl('');
+        setParamsUrl('/category/smartphones');
       }, 0)
     }
     return newData;
