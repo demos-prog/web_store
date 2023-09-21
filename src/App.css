@@ -19,6 +19,11 @@ main {
   margin-top: 60px;
 }
 
+#info_panel{
+  display: flex;
+  justify-content: center;
+}
+
 #main_cont {
   padding: 10px 30px;
   display: flex;

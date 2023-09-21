@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { useState } from "react";
 import './null_styles.css';
 
+import TextField from '@mui/material/TextField';
 import loader from './assets/Eclipse-1s-200px.svg';
 import Categorie from "./components/Categorie";
 import Product from "./components/Product";
@@ -49,7 +50,16 @@ function App() {
     setCart([]);
   }
 
+  function handleSearch(e: { preventDefault: () => void; }) {
+    e.preventDefault();
+    const elem = document.querySelector('#input_field') as HTMLInputElement;
+    setParamsUrl(`/search?q=${elem.value}`);
+    elem.value = "";
+    elem.blur();
+  }
+
   function getQueryKeyFromSearchParams(endpoint: string) {
+    if (endpoint.includes("/search?q=")) return [endpoint.slice(9)];
     const parts = endpoint.split('?');
     const resultKey: string[] = [];
     const paths = parts[0].split('/');
@@ -62,6 +72,7 @@ function App() {
         resultKey.push(param.split("=")[0])
       })
     }
+
     return resultKey;
   }
 
@@ -112,6 +123,11 @@ function App() {
           </div>
         </div>
         <div className="container">
+          <section id="info_panel">
+            <form onSubmit={handleSearch}>
+              <TextField id="input_field" label="Search" variant="standard" />
+            </form>
+          </section>
           <section id="main_cont">
             <aside id="categories_cont">
               <Categorie

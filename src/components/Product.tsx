@@ -53,8 +53,8 @@ const Product: React.FC<Tproduct> = ({ product, setCart, cart }: Tproduct) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={{ ...style, height: 'auto' }}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            <h3>{product.title}</h3>
+          <Typography id="modal-modal-title" variant="h5">
+            {product.title}
           </Typography>
           <Typography id="modal-modal-description"
             sx={{ mt: 2, whiteSpace: "initial", height: "auto", textOverflow: "initial" }}>
