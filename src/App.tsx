@@ -101,13 +101,17 @@ function App() {
       <main>
         <div id="cart_cont" className={isCartActive ? "active" : "unactive"}>
           <div id="cart_wrap">
-            <img id="close_menu"
-              onClick={() => setIsCartActive(false)}
-              src={close_icon} alt="close" />
-            <div id="cart_menu_logo">
-              <img src={cart_icon} alt="cart" />
-              <div id="cart_menu_logo_counter">{total_count}</div>
+            <div id="menu_head">
+              <div id="cart_menu_logo">
+                <img src={cart_icon} alt="cart" />
+                <div id="cart_menu_logo_counter">{total_count}</div>
+              </div>
+              <img id="close_menu"
+                onClick={() => setIsCartActive(false)}
+                src={close_icon} alt="close"
+              />
             </div>
+
             {cart.length < 1 ? <p>Pleas chose something :)</p>
               :
               <>

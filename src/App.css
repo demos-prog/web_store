@@ -198,7 +198,6 @@ body::-webkit-scrollbar,
 
 #close_menu{
   cursor: pointer;
-  margin-left: 90%;
   height: 40px;
   filter: invert();
   transition: linear .2s;
@@ -206,6 +205,11 @@ body::-webkit-scrollbar,
 
 #close_menu:hover{
   opacity: .8;
+}
+
+#menu_head{
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 900px) {
