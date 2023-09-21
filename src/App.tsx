@@ -112,7 +112,7 @@ function App() {
               />
             </div>
 
-            {cart.length < 1 ? <p>Pleas chose something :)</p>
+            {cart.length < 1 ? <p>Please chose something :)</p>
               :
               <>
                 <p>Total cost: <b>{total_cost}</b> $</p>
