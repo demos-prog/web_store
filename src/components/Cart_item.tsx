@@ -41,7 +41,7 @@ const Cart_item: React.FC<Cart_itemProps> = ({ product, setCart }: Cart_itemProp
   return (
     <div className='cart_item'>
       <img src={product.thumbnail} alt={product.title} />
-      {product.title}
+      <span>{product.title}</span>
       <div className='cart_counter'>
         <div className='price_delete'>
           <p>{product.price} $</p>

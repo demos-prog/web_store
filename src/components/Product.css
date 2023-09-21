@@ -1,15 +1,50 @@
 .product_item {
   display: flex;
+  gap: 10px;
   flex-direction: column;
-  border: 1px solid #000;
-  max-width: 200px;
-  height: 300px;
-  overflow: scroll;
+  border: 3px double #000;
+  width: 200px;
+  padding: 10px;
+  overflow: hidden;
 }
 
-.add_btn {
+.product_item img {
+  height: 100px;
+  object-fit: cover;
+}
+
+h2{
+  white-space: initial;
+}
+.product_item p {
+  text-align: center;
+}
+
+p,
+h3 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+h3 {
+  font-size: medium;
+  font-weight: 700;
+}
+
+.product_item button {
   padding: 10px;
   transition: linear 0.2s;
+}
+
+.product_item button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.add_btn,
+.selected {
+  font-size: large;
 }
 
 .selected {
@@ -18,9 +53,4 @@
   cursor: initial;
   padding: 10px;
   background-color: rgb(219, 219, 219);
-}
-
-.add_btn:hover {
-  background-color: #000;
-  color: white;
 }
