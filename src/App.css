@@ -69,9 +69,10 @@ main {
 }
 
 #cart_cont {
+  overflow-y: scroll;
   color: white;
   padding: 20px;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   z-index: 1000;
   top: 0;
