@@ -2,6 +2,24 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+@font-face {
+  font-family: "Stanley";
+  src: local("AirbnbCerealLight"),
+    url("./fonts/Stanley.ttf") format("truetype");
+}
+
+#logo{
+  margin-left: 50px;
+  font-size:xx-large;
+  font-family: "Stanley";
+}
+
+#header_wrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -22,7 +40,8 @@ main {
 
 #info_panel {
   display: flex;
-  justify-content: center;
+  margin-left: 30px;
+  /* justify-content: center; */
 }
 
 #main_cont {
@@ -93,11 +112,11 @@ body::-webkit-scrollbar,
 }
 
 .active {
-  left: 50%;
+  left: 50vw;
 }
 
 .unactive {
-  left: 100%;
+  left: 100vw;
 }
 
 #background {
@@ -175,4 +194,26 @@ body::-webkit-scrollbar,
 
 #clear {
   border: 4px double crimson;
+}
+
+#close_menu{
+  cursor: pointer;
+  margin-left: 90%;
+  height: 40px;
+  filter: invert();
+  transition: linear .2s;
+}
+
+#close_menu:hover{
+  opacity: .8;
+}
+
+@media (max-width: 900px) {
+  #cart_cont{
+    width: 100vw;
+  }
+  .active {
+    left: 0px;
+  }
+
 }

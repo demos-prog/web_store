@@ -4,6 +4,7 @@ import './null_styles.css';
 
 import TextField from '@mui/material/TextField';
 import loader from './assets/Eclipse-1s-200px.svg';
+import close_icon from './assets/icons/delete.svg';
 import Categorie from "./components/Categorie";
 import Product from "./components/Product";
 import Cart_item from "./components/Cart_item";
@@ -86,10 +87,13 @@ function App() {
       <div id="background" className={isCartActive ? "" : "unactiveBg"} onClick={handleOpenCartMenu} />
       <header>
         <div className="container">
-          <div id="header_cont">
-            <div id="cart_logo" onClick={handleOpenCartMenu}>
-              <img src={cart_icon} alt="cart" />
-              <div id="cart_menu_logo_counter">{total_count}</div>
+          <div id="header_wrap">
+            <div id="logo">Web store</div>
+            <div id="header_cont">
+              <div id="cart_logo" onClick={handleOpenCartMenu}>
+                <img src={cart_icon} alt="cart" />
+                <div id="cart_menu_logo_counter">{total_count}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -97,6 +101,9 @@ function App() {
       <main>
         <div id="cart_cont" className={isCartActive ? "active" : "unactive"}>
           <div id="cart_wrap">
+            <img id="close_menu"
+              onClick={() => setIsCartActive(false)}
+              src={close_icon} alt="close" />
             <div id="cart_menu_logo">
               <img src={cart_icon} alt="cart" />
               <div id="cart_menu_logo_counter">{total_count}</div>
@@ -130,6 +137,7 @@ function App() {
           </section>
           <section id="main_cont">
             <aside id="categories_cont">
+              <p>Categories:</p>
               <Categorie
                 name={"All"}
                 paramsUrl={paramsUrl}
