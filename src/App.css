@@ -212,10 +212,22 @@ body::-webkit-scrollbar,
   align-items: center;
 }
 
-#scroll_btn{
+#scroll_btn {
+  /* border: 2px solid #000; */
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  height: 50px;
   position: fixed;
   top: 90%;
-  left: 90%;
+  left: 93%;
+  transition: .2s;
+}
+
+#scroll_btn:hover {
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 #btn_wr {
@@ -240,6 +252,10 @@ body::-webkit-scrollbar,
 @media (max-width: 900px) {
   #cart_cont {
     width: 100vw;
+  }
+
+  #scroll_btn {
+    left: 10%;
   }
 
   .active {

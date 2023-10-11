@@ -8,7 +8,8 @@ import close_icon from './assets/icons/delete.svg';
 import Categorie from "./components/Categorie";
 import Product from "./components/Product";
 import Cart_item from "./components/Cart_item";
-import cart_icon from './assets/icons/shopping-cart.svg'
+import cart_icon from './assets/icons/shopping-cart.svg';
+import arrow_icon from './assets/icons/arrow_up.svg';
 
 import './App.css';
 
@@ -42,7 +43,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 400) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -50,7 +51,7 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -205,7 +206,7 @@ function App() {
           <div id="btn_wr">
             {paramsUrl === '' && <button id="see_more_btn" onClick={see_more}>See more</button>}
           </div>
-          {showButton && <button id="scroll_btn" onClick={handleClick}>Back to top</button>}
+          {showButton && <img src={arrow_icon} id="scroll_btn" onClick={handleClick} alt="Go to top" />}
         </div>
       </main>
     </>
