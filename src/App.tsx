@@ -43,7 +43,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 600) {
         setShowButton(true);
       } else {
         setShowButton(false);
