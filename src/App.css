@@ -8,13 +8,13 @@
     url("./fonts/Stanley.ttf") format("truetype");
 }
 
-#logo{
+#logo {
   margin-left: 50px;
-  font-size:xx-large;
+  font-size: xx-large;
   font-family: "Stanley";
 }
 
-#header_wrap{
+#header_wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -196,39 +196,67 @@ body::-webkit-scrollbar,
   border: 4px double crimson;
 }
 
-#close_menu{
+#close_menu {
   cursor: pointer;
   height: 40px;
   filter: invert();
   transition: linear .2s;
 }
 
-#close_menu:hover{
+#close_menu:hover {
   opacity: .8;
 }
 
-#menu_head{
+#menu_head {
   display: flex;
   align-items: center;
 }
 
+#scroll_btn{
+  position: fixed;
+  top: 90%;
+  left: 90%;
+}
+
+#btn_wr {
+  margin-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#see_more_btn {
+  padding: 15px 30px;
+  border: 1px solid #000;
+  background-color: white;
+  transition: .2s;
+}
+
+#see_more_btn:hover {
+  border: 1px solid purple;
+}
+
+
 @media (max-width: 900px) {
-  #cart_cont{
+  #cart_cont {
     width: 100vw;
   }
+
   .active {
     left: 0px;
   }
 }
+
 @media (max-width: 400px) {
-  #main_cont{
+  #main_cont {
     padding: 10px;
   }
-  #info_panel{
+
+  #info_panel {
     margin-left: 10px;
   }
 
-  #content_wrap{
+  #content_wrap {
     margin-left: 10px;
   }
 }

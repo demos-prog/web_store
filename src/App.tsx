@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './null_styles.css';
 
 import TextField from '@mui/material/TextField';
@@ -26,6 +26,7 @@ function App() {
   const [categories, setCategories] = useState<string[]>([]);
   const [cart, setCart] = useState<Product_type[]>([]);
   const [isCartActive, setIsCartActive] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState(false);
 
   const { isLoading, isError, data } = useQuery(getQueryKeyFromSearchParams(paramsUrl), async () => {
     const response = await fetch(`https://dummyjson.com/products${paramsUrl}`);
@@ -38,6 +39,30 @@ function App() {
     }
     return newData;
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 600) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  function see_more() {
+    setParamsUrl(`?limit=60`);
+  }
 
   function handleOpenCartMenu() {
     setIsCartActive(prev => !prev);
@@ -61,6 +86,7 @@ function App() {
 
   function getQueryKeyFromSearchParams(endpoint: string) {
     if (endpoint.includes("/search?q=")) return [endpoint.slice(9)];
+    if (endpoint.includes("limit")) return [endpoint.slice(7)];
     const parts = endpoint.split('?');
     const resultKey: string[] = [];
     const paths = parts[0].split('/');
@@ -176,6 +202,10 @@ function App() {
               }
             </div>
           </section>
+          <div id="btn_wr">
+            {paramsUrl === '' && <button id="see_more_btn" onClick={see_more}>See more</button>}
+          </div>
+          {showButton && <button id="scroll_btn" onClick={handleClick}>Back to top</button>}
         </div>
       </main>
     </>
